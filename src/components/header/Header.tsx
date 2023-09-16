@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 import Hamburger from './Hamburger';
 import MobileMenu from './MobileMenu';
+import { useHasScrolledPast } from '../hooks/useScrolledPast';
 
 import vw from '@/styles/utils';
 import nav, { NavType } from '@/data/nav';
@@ -13,6 +14,8 @@ const Header = () => {
   const pathname = usePathname();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const hasScrolledPast = useHasScrolledPast();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -23,9 +26,9 @@ const Header = () => {
   };
 
   return (
-    <Root>
+    <Root hasScrolled={hasScrolledPast}>
       <Link href="/">
-        <h3 className="cursive black">J + D</h3>
+        <h3 className={`cursive black ${hasScrolledPast && 'small'}`}>J + D</h3>
       </Link>
       <Container>
         {nav.map((item: NavType) => (
@@ -34,7 +37,7 @@ const Header = () => {
             key={item.text}
             active={pathname === item.to}
           >
-            <p>{item.text}</p>
+            <p className={`${hasScrolledPast && 'small'}`}>{item.text}</p>
           </StyledLink>
         ))}
       </Container>
@@ -44,7 +47,11 @@ const Header = () => {
   );
 };
 
-const Root = styled.header`
+type RootProps = {
+  hasScrolled: boolean;
+};
+
+const Root = styled.header<RootProps>`
   position: fixed;
   background-color: ${({ theme }) => theme.color.tan};
   display: flex;
@@ -54,9 +61,15 @@ const Root = styled.header`
   left: 0;
   width: 100%;
   z-index: 5;
+  transition: ${({ theme }) => theme.transition};
   ${vw('flex-direction', 'row', 'column')}
-  ${vw('padding-top', 10, 20)}
-  ${vw('padding-bottom', 10, 20)}
+  ${({ hasScrolled }) =>
+    hasScrolled ? vw('padding-top', 10) : vw('padding-top', 10, 20)}
+  ${({ hasScrolled }) =>
+    hasScrolled ? vw('padding-bottom', 10) : vw('padding-bottom', 10, 20)}
+  h3, p {
+    transition: ${({ theme }) => theme.transition};
+  }
 `;
 
 const Container = styled.div`

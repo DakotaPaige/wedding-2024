@@ -8,13 +8,16 @@ import FlowerImg from '@/assets/images/graphics/flower2.png';
 interface Props {
   title: string;
   text?: string;
+  cursive?: boolean;
 }
 
-const Intro = ({ title, text }: Props) => {
+const Intro = ({ title, text, cursive }: Props) => {
   return (
     <Root>
       <h2 className="black center">{title}</h2>
-      {text && <h3 className="black center">{text}</h3>}
+      {text && (
+        <h3 className={`black center ${cursive && 'cursive'}`}>{text}</h3>
+      )}
       <Flower src={FlowerImg} alt="Flower" />
     </Root>
   );

@@ -82,6 +82,9 @@ const GlobalStyle = createGlobalStyle`
     &.cursive {
       font-family: ${theme.font.cursive};
     }
+    &.small {
+      ${vw('font-size', 18, 18, 28)}
+    }
   }
   
   p {
@@ -89,6 +92,9 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-style: normal;
     ${vw('font-size', 16, 18, 24)}
+    &.small {
+      ${vw('font-size', 16, 14, 18)}
+    }
   }
 
   .nav {

@@ -3,8 +3,7 @@ export type QuestionType = { question: string; answer: string };
 const questions: QuestionType[] = [
   {
     question: 'Where is the wedding taking place?',
-    answer:
-      'Attack feet behind the couch destroy couch flop over give attitude hide when guests come over hopped up on goofballs hunt anything that moves  intrigued by the shower leave dead animals as gifts, shake treat  all of a sudden go crazy make muffins',
+    answer: 'North Vancouver, British Columbia. Come back soon for more info!',
   },
   {
     question: 'What time should I arrive?',
@@ -13,7 +12,7 @@ const questions: QuestionType[] = [
   },
   {
     question: 'How do I RSVP?',
-    answer: 'Lorem Ipsum',
+    answer: 'RSVP is coming soon, stay tuned.',
   },
   {
     question: 'When should I RSVP by?',
