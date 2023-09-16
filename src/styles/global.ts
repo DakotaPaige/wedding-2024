@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
   main {
     width: 100%;
     background-color: ${theme.color.tan};
+    overflow: hidden;
   }
 
   a {

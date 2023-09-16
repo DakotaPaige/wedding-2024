@@ -31,12 +31,23 @@ const Info = () => {
           Enjoy the site and see you soon!
         </p>
       </Wrapper>
+      <Line />
     </Section>
   );
 };
 
 const Wrapper = styled.div`
   ${vw('text-align', 'left', 'center')}
+  ${vw('margin-top', 40, 60, 80)}
+`;
+
+const Line = styled.span`
+  background-color: ${({ theme }) => theme.color.violet};
+  height: 2px;
+  ${vw('border-radius', 5)}
+  ${vw('width', 80, 120, 180)}
+  ${vw('margin-top', 40, 80, 120)}
+  ${vw('margin-bottom', 40, 80, 120)}
 `;
 
 export default Info;
