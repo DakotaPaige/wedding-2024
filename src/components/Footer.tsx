@@ -34,7 +34,9 @@ const Footer = () => {
   );
 };
 
-const Root = styled.footer``;
+const Root = styled.footer`
+  ${vw('margin-top', 60, 120, 240)}
+`;
 
 const ImageWrapper = styled.div`
   position: relative;

@@ -38,7 +38,6 @@ const Root = styled.section<RootProps>`
     moreTopPadding
       ? vw('padding-top', 180, 240, 360)
       : vw('padding-top', 60, 120, 240)}
-  ${vw('padding-bottom', 60, 120, 240)}
   ${vw('padding-left', 20, 40, 120)}
   ${vw('padding-right', 20, 40, 120)}
 `;

@@ -5,23 +5,20 @@ import Section from '../layout/Section';
 
 import vw from '@/styles/utils';
 
+import Flower4Img from 'src/assets/images/graphics/flower4.png';
+import Flower2Img from 'src/assets/images/graphics/flower2.png';
+
 const Intro = () => {
   return (
     <Section moreTopPadding>
-      <Flower
-        src={require('src/assets/images/graphics/flower4.png')}
-        alt="Flower"
-      />
+      <Flower src={Flower4Img} alt="Flower" />
       <h2 className="center black">We're getting married!</h2>
       <Date className="cursive center black">July 13, 2024</Date>
       <h2 className="center black">
         North Vancouver,
         <br className="mobile-only" /> British Columbia
       </h2>
-      <Flower2
-        src={require('src/assets/images/graphics/flower2.png')}
-        alt="Flower"
-      />
+      <Flower2 src={Flower2Img} alt="Flower" />
     </Section>
   );
 };
