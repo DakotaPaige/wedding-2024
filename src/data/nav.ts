@@ -10,3 +10,8 @@ const nav = [
 ];
 
 export default nav;
+export interface NavType {
+  to: string;
+  text: string;
+}
+[];

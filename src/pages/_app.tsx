@@ -2,7 +2,7 @@ import type { AppProps } from 'next/app';
 import { Playfair_Display, Great_Vibes } from 'next/font/google';
 import { ThemeProvider } from 'styled-components';
 
-import Header from '@/components/Header';
+import Header from '@/components/header/Header';
 import Footer from '@/components/Footer';
 
 import GlobalStyle from '@/styles/global';

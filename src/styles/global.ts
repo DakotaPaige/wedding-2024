@@ -89,6 +89,13 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
     ${vw('font-size', 16, 18, 24)}
   }
+
+  .nav {
+    font-family: ${theme.font.family};
+    font-weight: 400;
+    font-style: normal;
+    ${vw('font-size', 22, 28, 32)}
+  }
 `;
 
 export default GlobalStyle;
