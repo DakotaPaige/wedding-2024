@@ -1,10 +1,6 @@
-import { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
-import { ThemeProvider, ServerStyleSheet } from 'styled-components';
+import { Html, Head, Main, NextScript } from 'next/document';
 
 import StyledComponentsRegistry from '../lib/registry';
-
-import GlobalStyle from '@/styles/global';
-import theme from '@/styles/theme';
 
 export default function Document() {
   return (
@@ -12,11 +8,8 @@ export default function Document() {
       <Head />
       <body>
         <StyledComponentsRegistry>
-          <ThemeProvider theme={theme}>
-            <GlobalStyle />
-            <Main />
-            <NextScript />
-          </ThemeProvider>
+          <Main />
+          <NextScript />
         </StyledComponentsRegistry>
       </body>
     </Html>
