@@ -31,7 +31,7 @@ const Root = styled.div`
   justify-content: center;
   background-color: ${({ theme }) => theme.color.tan};
   transition: ${({ theme }) => theme.transition};
-  transition-delay: 1s;
+  /* transition-delay: 1s; */
   z-index: 100;
 `;
 
