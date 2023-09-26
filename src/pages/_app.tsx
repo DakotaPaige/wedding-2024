@@ -1,12 +1,19 @@
+import { useEffect, useState } from 'react';
 import type { AppProps } from 'next/app';
+import { Provider } from 'react-redux';
+import { usePathname } from 'next/navigation';
 import { Playfair_Display, Great_Vibes } from 'next/font/google';
 import { ThemeProvider } from 'styled-components';
+import { useAppDispatch } from '@/components/hooks';
 
 import Header from '@/components/header/Header';
 import Footer from '@/components/Footer';
+import Loading from '@/components/Loading';
 
 import GlobalStyle from '@/styles/global';
 import theme from '@/styles/theme';
+import { setIsLoading } from '@/redux/page';
+import { wrapper } from '@/redux/store';
 
 export const Playfair = Playfair_Display({
   subsets: ['latin'],
@@ -18,7 +25,14 @@ export const GreatVibes = Great_Vibes({
   variable: '--great-vibes',
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
+  const dispatch = useAppDispatch();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setTimeout(() => dispatch(setIsLoading(false)), 1000);
+  }, [pathname, dispatch]);
+
   return (
     <ThemeProvider theme={theme}>
       <main className={`${Playfair.variable} ${GreatVibes.variable}`}>
@@ -26,7 +40,10 @@ export default function App({ Component, pageProps }: AppProps) {
         <Header />
         <Component {...pageProps} />
         <Footer />
+        <Loading />
       </main>
     </ThemeProvider>
   );
 }
+
+export default wrapper.withRedux(App);
