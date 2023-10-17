@@ -6,6 +6,7 @@ const theme = {
     black: '#1E1B18',
     green: '#5B6C5D',
     blue: '#1ac1dd',
+    blueLight: '#99C9D1',
   },
   font: {
     family: 'var(--playfair-display)',

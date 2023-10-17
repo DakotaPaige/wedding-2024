@@ -7,7 +7,7 @@ import FlowerImg from '@/assets/images/graphics/flower2.png';
 
 interface Props {
   title: string;
-  text?: string;
+  text?: string | JSX.Element;
   cursive?: boolean;
 }
 

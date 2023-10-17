@@ -15,8 +15,8 @@ const Intro = () => {
       <h2 className="center black">We're getting married!</h2>
       <Date className="cursive center black">July 13, 2024</Date>
       <h2 className="center black">
-        North Vancouver,
-        <br className="mobile-only" /> British Columbia
+        Grouse Mountain, North Vancouver,
+        <br /> British Columbia
       </h2>
       <Flower2 src={Flower2Img} alt="Flower" />
     </Section>
