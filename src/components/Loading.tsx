@@ -7,7 +7,7 @@ import vw from '@/styles/utils';
 const Loading = () => {
   const { isLoading } = useAppSelector((state) => state.page);
 
-  console.log(isLoading);
+  // console.log(isLoading);
   return (
     <Root
       style={{

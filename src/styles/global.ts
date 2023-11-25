@@ -87,13 +87,13 @@ const GlobalStyle = createGlobalStyle`
     }
   }
   
-  p {
+  p, label {
     font-family: ${theme.font.family};
     font-weight: 400;
     font-style: normal;
     ${vw('font-size', 16, 18, 24)}
     &.small {
-      ${vw('font-size', 16, 14, 18)}
+      ${vw('font-size', 14, 14, 18)}
     }
   }
 
@@ -102,6 +102,11 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-style: normal;
     ${vw('font-size', 22, 28, 32)}
+  }
+
+  .grecaptcha-badge {
+    opacity: 0;
+    pointer-events: none;
   }
 `;
 

@@ -22,12 +22,17 @@ const Footer = () => {
       </ImageWrapper>
       <Container>
         <div>
-          <h3>Dakota & Jay</h3>
+          <h3>Jay & Dakota</h3>
           <p>July 13, 2024</p>
         </div>
         <Wrapper>
-          <p>&copy; {new Date().getFullYear()} Dakota & Jay</p>
-          <p>Made with 💜 by Dakota</p>
+          <p>&copy; {new Date().getFullYear()} Jay & Dakota</p>
+          <p>
+            Made with 💜 by{' '}
+            <a href="https://dakotamauza.com/" target="_blank" rel="noopener">
+              Dakota
+            </a>
+          </p>
         </Wrapper>
       </Container>
     </Root>

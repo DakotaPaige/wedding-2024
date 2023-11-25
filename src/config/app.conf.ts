@@ -8,6 +8,7 @@ const config = {
     tablet: 576,
     desktop: 992,
   },
+  rsvpActivation: 'wheresthebears',
 };
 
 export default config;
