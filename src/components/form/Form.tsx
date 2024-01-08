@@ -54,6 +54,11 @@ const Form = () => {
           if (res === false) {
             setLoading(false);
             setError(true);
+          } else if (res.user === null) {
+            setHasAlreadyRSVP(false);
+            setUser(null);
+            setLoading(false);
+            setHasSubmittedEmail(true);
           } else {
             setHasAlreadyRSVP(false);
             setUser(res);
@@ -141,6 +146,8 @@ const Form = () => {
     }
   };
 
+  console.log(user);
+
   return (
     <>
       {/* Hacky way to hide the recaptcha badge */}
@@ -158,7 +165,7 @@ const Form = () => {
       />
       <Root
         onSubmit={
-          hasSubmittedEmail && user!.length > 0
+          hasSubmittedEmail && user !== null && user!.length > 0
             ? (e) => handleUpdateData(e)
             : (e) => handleCheckEmail(e)
         }
@@ -183,7 +190,7 @@ const Form = () => {
               id="email"
               label="Please enter your email"
               type="email"
-              disabled={hasSubmittedEmail && user!.length > 0}
+              disabled={hasSubmittedEmail && user !== null && user!.length > 0}
             />
             {/* Email is submitted but doesn't exist */}
             {hasSubmittedEmail && user?.length === 0 && <EmailError />}
@@ -193,7 +200,7 @@ const Form = () => {
               }}
             >
               <Container>
-                {user !== null && (
+                {user !== null && user[0] && (
                   <h3 className="black">
                     Welcome {user[0].firstName}{' '}
                     {user[1]?.firstName && `and ${user[1].firstName}`}!

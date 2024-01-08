@@ -26,17 +26,24 @@ const UserForm = ({
   return (
     <Root style={{ display: active ? 'block' : 'none' }}>
       <>
+        {user !== null && user[0] && (
+          <input
+            type="hidden"
+            name="name"
+            value={`${user[0].firstName} ${user[0].lastName}`}
+          />
+        )}
         <Radio
           name="plusOne"
           id="plusOne"
           label="Will you be bringing a plus one?"
-          required={user !== null && user[0].plusOne}
+          required={user !== null && user[0] && user[0].plusOne}
           options={[
             { value: 'Yes', label: `Yes` },
             { value: 'No', label: `No` },
           ]}
           handleChange={handlePlusOne}
-          inactive={user !== null && !user[0].plusOne}
+          inactive={user !== null && user[0] && !user[0].plusOne}
         />
         <Input
           name="plusOneName"
