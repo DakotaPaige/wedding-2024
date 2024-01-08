@@ -26,13 +26,15 @@ const UserForm = ({
   return (
     <Root style={{ display: active ? 'block' : 'none' }}>
       <>
-        {user !== null && user[0] && (
-          <input
-            type="hidden"
-            name="name"
-            value={`${user[0].firstName} ${user[0].lastName}`}
-          />
-        )}
+        <input
+          type="hidden"
+          name="name"
+          value={
+            user !== null && user[0]
+              ? `${user[0].firstName} ${user[0].lastName}`
+              : ''
+          }
+        />
         <Radio
           name="plusOne"
           id="plusOne"
