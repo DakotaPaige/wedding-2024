@@ -240,6 +240,7 @@ const Form = () => {
                 handlePlusOne={handlePlusOne}
                 hasKids={hasKids}
                 active={isComing !== null && isComing}
+                isComing={isComing}
               />
               <div
                 style={{

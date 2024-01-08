@@ -11,6 +11,7 @@ interface Props {
   plusOne: boolean;
   hasKids: boolean;
   active: boolean;
+  isComing: boolean;
   handlePlusOne: (val: string) => void;
   handleChildren: (val: string) => void;
 }
@@ -22,6 +23,7 @@ const UserForm = ({
   handleChildren,
   hasKids,
   active,
+  isComing,
 }: Props) => {
   return (
     <Root style={{ display: active ? 'block' : 'none' }}>
@@ -39,7 +41,7 @@ const UserForm = ({
           name="plusOne"
           id="plusOne"
           label="Will you be bringing a plus one?"
-          required={user !== null && user[0] && user[0].plusOne}
+          required={user !== null && user[0] && user[0].plusOne && isComing}
           options={[
             { value: 'Yes', label: `Yes` },
             { value: 'No', label: `No` },
@@ -50,7 +52,7 @@ const UserForm = ({
         <Input
           name="plusOneName"
           id="plusOneName"
-          required={plusOne}
+          required={plusOne && isComing}
           label="What is the first and last name of your plus one?"
           inactive={!plusOne}
         />
