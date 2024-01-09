@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export type QuestionType = { question: string; answer: string | JSX.Element };
 
 const questions: QuestionType[] = [
@@ -6,14 +8,20 @@ const questions: QuestionType[] = [
     answer:
       'Grouse Mountain in North Vancouver, British Columbia. Come back soon for more info!',
   },
-  // {
-  //   question: 'What time should I arrive?',
-  //   answer:
-  //     '',
-  // },
   {
     question: 'How and when do I RSVP?',
-    answer: 'RSVP is coming soon, stay tuned.',
+    answer: (
+      <>
+        RSVP is open, please go to the <Link href="/rsvp">RSVP</Link> page. You
+        should have received the access code to your email, please contact us if
+        there are any errors or you have more questions.
+      </>
+    ),
+  },
+  {
+    question: 'What is the schedule?',
+    answer:
+      'We have not finalized the schedule yet, but we are aiming to start the ceremony at 3:00pm. We will send out more information closer to the day regarding the schedule.',
   },
   {
     question: 'Is there a dress code?',
@@ -44,7 +52,8 @@ const questions: QuestionType[] = [
   },
   {
     question: 'Are children invited?',
-    answer: 'Please refer to the RSVP when they are sent out.',
+    answer:
+      'Please refer to the RSVP, and contact us directly if you need more information.',
   },
   {
     question:
