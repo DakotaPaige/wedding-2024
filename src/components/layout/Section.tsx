@@ -6,15 +6,21 @@ import vw from '@/styles/utils';
 interface Props {
   left?: boolean;
   moreTopPadding?: boolean;
+  noTopPadding?: boolean;
 }
 
 const Section = ({
   children,
   left,
   moreTopPadding,
+  noTopPadding,
 }: PropsWithChildren<Props>) => {
   return (
-    <Root left={left} moreTopPadding={moreTopPadding}>
+    <Root
+      left={left}
+      moreTopPadding={moreTopPadding}
+      noTopPadding={noTopPadding}
+    >
       {children}
     </Root>
   );
@@ -23,6 +29,7 @@ const Section = ({
 type RootProps = {
   left?: boolean;
   moreTopPadding?: boolean;
+  noTopPadding?: boolean;
 };
 
 const Root = styled.section<RootProps>`
@@ -34,8 +41,10 @@ const Root = styled.section<RootProps>`
     left
       ? vw('align-items', 'flex-start', 'center')
       : vw('align-items', 'center')}
-  ${({ moreTopPadding }) =>
-    moreTopPadding
+  ${({ moreTopPadding, noTopPadding }) =>
+    noTopPadding
+      ? vw('padding-top', 0)
+      : moreTopPadding
       ? vw('padding-top', 180, 240, 360)
       : vw('padding-top', 60, 120, 240)}
   ${vw('padding-left', 20, 40, 120)}

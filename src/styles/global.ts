@@ -104,6 +104,20 @@ const GlobalStyle = createGlobalStyle`
     ${vw('font-size', 22, 28, 32)}
   }
 
+  .map-point {
+    font-family: ${theme.font.family};
+    font-weight: 400;
+    font-style: normal;
+    ${vw('font-size', 14, 14, 16)}
+  }
+
+  .caption {
+    font-family: ${theme.font.family};
+    font-weight: 400;
+    font-style: normal;
+    ${vw('font-size', 12, 12, 14)}
+  }
+
   .grecaptcha-badge {
     opacity: 0;
     pointer-events: none;

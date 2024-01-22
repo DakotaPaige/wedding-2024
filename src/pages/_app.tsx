@@ -37,7 +37,6 @@ function App({ Component, pageProps }: AppProps) {
   }, [pathname, dispatch]);
 
   useEffect(() => {
-    console.log(loaded);
     if (loaded) {
       console.log('hello');
       let recaptcha = Array.from(
