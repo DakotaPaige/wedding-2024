@@ -6,9 +6,14 @@ import TitleText from '@/components/layout/TitleText';
 import FullImage from '@/components/layout/FullImage';
 import Section from '@/components/layout/Section';
 import GoogleMap from '@/components/travel/GoogleMap';
-import Hotels from '@/components/travel/Hotels';
+import Favourites from '@/components/travel/Favourites';
 
 import vw from '@/styles/utils';
+
+// Hotels contains an iframe which was causing issues
+const HotelsNoSSR = dynamic(() => import('@/components/travel/Hotels'), {
+  ssr: false,
+});
 
 export default function Page() {
   return (
@@ -38,6 +43,18 @@ export default function Page() {
           </>
         }
       />
+      <Section lessTopPadding>
+        <Wrapper>
+          <GoogleMap />
+          <HotelsNoSSR />
+        </Wrapper>
+      </Section>
+      <TitleText
+        title="Our Favourite Spots"
+        text="We've curated a list of some of our favourite spots around the city. If you have extra time while you're here, check some of them out!"
+        noLine
+      />
+      <Favourites />
       <FullImage
         img={{
           src: require('@/assets/images/grouse-mountain.jpg'),
@@ -45,12 +62,6 @@ export default function Page() {
         }}
         caption="On the chairlift looking onto Vancouver at Grouse Mountain, BC."
       />
-      <Section>
-        <Wrapper>
-          <GoogleMap />
-          <Hotels />
-        </Wrapper>
-      </Section>
     </main>
   );
 }

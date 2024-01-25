@@ -87,7 +87,7 @@ const GlobalStyle = createGlobalStyle`
     }
   }
   
-  p, label {
+  p, label, .body {
     font-family: ${theme.font.family};
     font-weight: 400;
     font-style: normal;

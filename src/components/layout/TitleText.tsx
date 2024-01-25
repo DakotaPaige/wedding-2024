@@ -7,23 +7,25 @@ import vw from '@/styles/utils';
 interface Props {
   title: string | JSX.Element;
   text: string | JSX.Element;
+  noLine?: boolean;
 }
 
-const TitleText = ({ title, text }: Props) => {
+const TitleText = ({ title, text, noLine }: Props) => {
   return (
     <Section left>
       <h2 className="black">{title}</h2>
       <Wrapper>
         <p className="black">{text}</p>
       </Wrapper>
-      <Line />
+      {!noLine && <Line />}
     </Section>
   );
 };
 
 const Wrapper = styled.div`
   ${vw('text-align', 'left', 'center')}
-  ${vw('margin-top', 40, 60, 80)}
+  ${vw('margin-top', 40, 40, 80)}
+  ${vw('max-width', '100%', '100%', 1080)}
 `;
 
 const Line = styled.span`

@@ -6,6 +6,7 @@ import { Playfair_Display, Great_Vibes } from 'next/font/google';
 import { ThemeProvider } from 'styled-components';
 import { useAppDispatch } from '@/components/hooks';
 import { ReCaptchaProvider, useReCaptcha } from 'next-recaptcha-v3';
+import Script from 'next/script';
 
 import Header from '@/components/header/Header';
 import Footer from '@/components/Footer';
@@ -38,15 +39,12 @@ function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     if (loaded) {
-      console.log('hello');
       let recaptcha = Array.from(
         document.getElementsByClassName(
           'mat-form-field-infix'
         ) as HTMLCollectionOf<HTMLElement>
       );
-      console.log('hello');
       if (recaptcha) {
-        console.log('hello');
         recaptcha[0].style.opacity = '0';
       }
     }

@@ -172,7 +172,7 @@ const GoogleMap = ({ activeCategory, handlePoint }: Props) => {
 const Root = styled.div`
   position: relative;
   ${vw('width', '100%', '100%', '50%')}
-  ${vw('height', 320, 500, 650)}
+  ${vw('height', 420, 500, 650)}
 `;
 
 type LogoProps = {
