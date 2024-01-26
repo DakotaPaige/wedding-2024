@@ -15,7 +15,7 @@ const nav = [
   },
   {
     to: '/travel',
-    text: 'Travel',
+    text: 'Travel & Location',
   },
   {
     to: '/rsvp',

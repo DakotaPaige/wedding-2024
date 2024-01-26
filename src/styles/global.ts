@@ -87,7 +87,7 @@ const GlobalStyle = createGlobalStyle`
     }
   }
   
-  p, label {
+  p, label, .body {
     font-family: ${theme.font.family};
     font-weight: 400;
     font-style: normal;
@@ -102,6 +102,20 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-style: normal;
     ${vw('font-size', 22, 28, 32)}
+  }
+
+  .map-point {
+    font-family: ${theme.font.family};
+    font-weight: 400;
+    font-style: normal;
+    ${vw('font-size', 14, 14, 16)}
+  }
+
+  .caption {
+    font-family: ${theme.font.family};
+    font-weight: 400;
+    font-style: normal;
+    ${vw('font-size', 12, 12, 14)}
   }
 
   .grecaptcha-badge {
