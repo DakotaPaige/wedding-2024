@@ -5,8 +5,7 @@ export type QuestionType = { question: string; answer: string | JSX.Element };
 const questions: QuestionType[] = [
   {
     question: 'Where is the wedding taking place?',
-    answer:
-      'Grouse Mountain in North Vancouver, British Columbia. Come back soon for more info!',
+    answer: 'Grouse Mountain in North Vancouver, British Columbia.',
   },
   {
     question: 'How and when do I RSVP?',
@@ -35,7 +34,7 @@ const questions: QuestionType[] = [
   {
     question: 'Where can I stay?',
     answer:
-      'Vancouver is a world class destination with many places to stay. Stay tuned to our travel tab to learn more soon.',
+      'Vancouver is a world class destination with many places to stay. Check out the travel tab to learn more!',
   },
   {
     question: 'What will the weather be like?',
