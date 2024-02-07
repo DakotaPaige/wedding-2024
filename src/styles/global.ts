@@ -38,6 +38,10 @@ const GlobalStyle = createGlobalStyle`
     text-align: center;
   }
 
+  .underline {
+    text-decoration: underline;
+  }
+
   .mobile-only {
     ${vw('display', 'block', 'none')}
   }

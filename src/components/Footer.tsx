@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 import vw from '@/styles/utils';
 
-import image from '@/assets/images/butt-grab.jpg';
+import image from '@/assets/images/D&J-ENG-28.jpg';
+// import image from '@/assets/images/butt-grab.jpg';
 
 const Footer = () => {
   return (
@@ -17,9 +18,23 @@ const Footer = () => {
           fill
           style={{
             objectFit: 'cover',
+            objectPosition: 'center 15%',
           }}
         />
       </ImageWrapper>
+      <Div>
+        <p className="black caption">
+          Photography by{' '}
+          <a
+            href="https://www.emilycantera.com/"
+            target="_blank"
+            rel="norreferrer"
+            className="underline"
+          >
+            Emily Cantera Photography
+          </a>
+        </p>
+      </Div>
       <Container>
         <div>
           <h3>Jay & Dakota</h3>
@@ -56,6 +71,12 @@ const Container = styled.div`
   ${vw('padding-bottom', 40, 60)}
   ${vw('padding-left', 20, 40, 120)}
   ${vw('padding-right', 20, 40, 120)}
+`;
+
+const Div = styled.div`
+  ${vw('padding-left', 20, 40, 120)}
+  ${vw('padding-right', 20, 40, 120)}
+  ${vw('padding-top', 10)}
 `;
 
 const Wrapper = styled.div`
