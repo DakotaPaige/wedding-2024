@@ -7,6 +7,7 @@ interface Props {
   text: string;
   type?: 'button' | 'submit' | 'reset';
   to?: string;
+  href?: string;
   handleClick?: () => void;
   disabled?: boolean;
 }
@@ -17,12 +18,16 @@ const Button = ({
   to,
   handleClick = () => {},
   disabled,
+  href,
 }: Props) => {
   return (
     <Root
       type={type}
-      as={to ? Link : 'button'}
+      as={href ? 'a' : to ? Link : 'button'}
       to={to}
+      href={href}
+      target={href && '_blank'}
+      rel="noreferrer"
       onClick={handleClick}
       disabled={disabled}
     >
@@ -36,6 +41,7 @@ type RootProps = {
 };
 
 const Root = styled.button<RootProps>`
+  display: block;
   position: relative;
   cursor: pointer;
   width: fit-content;
